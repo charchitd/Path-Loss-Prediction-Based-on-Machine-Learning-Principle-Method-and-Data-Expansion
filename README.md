@@ -42,5 +42,5 @@ In this project the following classification and regression algorithm is used:
 > ![Screenshot](codes/images/Capture3.png)
 
 > ![Screenshot](codes/images/Capture4.png)
-
+ 
 > ![Screenshot](codes/images/Capture5.png)
