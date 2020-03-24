@@ -1,0 +1,11 @@
+library(caTools)
+data=read.csv('dat_cat.csv',header = TRUE,sep=',')
+dat=data[,! names(data) %in% 'Path.Loss..dB.', drop = F]
+set.seed(1000)
+sample = sample.split(dat$cat, SplitRatio = .70)
+TrainSet = subset(dat, sample == TRUE)
+ValidSet  = subset(dat, sample == FALSE)
+f <- as.formula(paste("cat ~", paste(n[!n %in% "cat"], collapse = " + ")))
+require(neuralnet)
+nn=neuralnet(f,data=TrainSet, hidden=3,linear.output = F)
+plot(nn)
